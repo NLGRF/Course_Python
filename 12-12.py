@@ -3,7 +3,7 @@ db = pymysql.connect( "localhost", "root",  "",  "order_db",
                       use_unicode=True, charset="utf8")       
 cursor = db.cursor()
 def show():
-    sql = "SELECT * FROM custdetail WHERE custID BETWEEN 51 AND 55"
+    sql = "SELECT * FROM custdetail WHERE custID"
     cursor.execute(sql)
     results = cursor.fetchall()
     for rows in results:
@@ -11,7 +11,7 @@ def show():
 
 show()
     
-sql = "DELETE FROM custdetail WHERE custID = 52"
+sql = "DELETE FROM custdetail WHERE custID"
 try:
     cursor.execute(sql)
     db.commit()
