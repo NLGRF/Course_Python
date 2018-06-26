@@ -2,7 +2,7 @@ import pymysql
 db = pymysql.connect( "localhost", "root",  "",  "order_db",
                       use_unicode=True, charset="utf8")       
 cursor = db.cursor()
-sql = "SELECT name, tel FROM custdetail WHERE custID BETWEEN 31 AND 35"
+sql = "SELECT name, tel FROM custdetail WHERE custID"
 try:
     cursor.execute(sql)
     results = cursor.fetchall()
